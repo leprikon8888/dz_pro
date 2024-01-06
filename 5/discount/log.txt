@@ -1,0 +1,84 @@
+2024-01-06 11:47:34,970 - __main__ - INFO - Chosen discount: gold
+2024-01-06 11:47:34,970 - __main__ - INFO - Total price for the order: 360.0
+2024-01-06 12:03:44,469 - __main__ - INFO - Chosen discount: gold
+2024-01-06 12:03:44,469 - order - ERROR - Ошибка при создании объекта Customer
+Traceback (most recent call last):
+  File "D:\attempt 2\pro\dz\6\discount\order.py", line 25, in __init__
+    if not isinstance(disc, discount.Discount):
+                            ^^^^^^^^
+NameError: name 'discount' is not defined
+2024-01-06 12:03:44,471 - order - ERROR - Ошибка при добавлении продукта в заказ
+Traceback (most recent call last):
+  File "D:\attempt 2\pro\dz\6\discount\order.py", line 39, in add_product
+    if not isinstance(prod, product.Product):
+                            ^^^^^^^
+NameError: name 'product' is not defined
+2024-01-06 12:03:44,473 - order - ERROR - Ошибка при добавлении продукта в заказ
+Traceback (most recent call last):
+  File "D:\attempt 2\pro\dz\6\discount\order.py", line 39, in add_product
+    if not isinstance(prod, product.Product):
+                            ^^^^^^^
+NameError: name 'product' is not defined
+2024-01-06 12:03:44,474 - order - ERROR - Ошибка при расчете общей стоимости заказа
+Traceback (most recent call last):
+  File "D:\attempt 2\pro\dz\6\discount\order.py", line 52, in total_price
+    disc = customer.discount.discount() if customer else 0
+           ^^^^^^^^^^^^^^^^^
+AttributeError: 'Customer' object has no attribute 'discount'
+2024-01-06 12:03:44,475 - __main__ - INFO - Total price for the order: None
+2024-01-06 12:05:12,108 - __main__ - INFO - Chosen discount: gold
+2024-01-06 12:05:12,109 - order - ERROR - Ошибка при создании объекта Customer
+Traceback (most recent call last):
+  File "D:\attempt 2\pro\dz\6\discount\order.py", line 25, in __init__
+    if not isinstance(disc, discount.Discount):
+                            ^^^^^^^^
+NameError: name 'discount' is not defined
+2024-01-06 12:05:12,111 - order - ERROR - Ошибка при добавлении продукта в заказ
+Traceback (most recent call last):
+  File "D:\attempt 2\pro\dz\6\discount\order.py", line 39, in add_product
+    if not isinstance(prod, product.Product):
+                            ^^^^^^^
+NameError: name 'product' is not defined
+2024-01-06 12:05:12,112 - order - ERROR - Ошибка при добавлении продукта в заказ
+Traceback (most recent call last):
+  File "D:\attempt 2\pro\dz\6\discount\order.py", line 39, in add_product
+    if not isinstance(prod, product.Product):
+                            ^^^^^^^
+NameError: name 'product' is not defined
+2024-01-06 12:05:12,113 - order - ERROR - Ошибка при расчете общей стоимости заказа
+Traceback (most recent call last):
+  File "D:\attempt 2\pro\dz\6\discount\order.py", line 52, in total_price
+    disc = customer.discount.discount() if customer else 0
+           ^^^^^^^^^^^^^^^^^
+AttributeError: 'Customer' object has no attribute 'discount'
+2024-01-06 12:05:12,114 - __main__ - INFO - Total price for the order: None
+2024-01-06 13:29:40,700 - __main__ - INFO - Chosen discount: gold
+2024-01-06 13:29:40,700 - order - ERROR - Ошибка при создании объекта Customer
+Traceback (most recent call last):
+  File "D:\attempt 2\pro\dz\6\discount\order.py", line 25, in __init__
+    if not isinstance(disc, discount.Discount):
+                            ^^^^^^^^
+NameError: name 'discount' is not defined
+2024-01-06 13:29:40,701 - order - ERROR - Ошибка при добавлении продукта в заказ
+Traceback (most recent call last):
+  File "D:\attempt 2\pro\dz\6\discount\order.py", line 39, in add_product
+    if not isinstance(prod, product.Product):
+                            ^^^^^^^
+NameError: name 'product' is not defined
+2024-01-06 13:29:40,702 - order - ERROR - Ошибка при добавлении продукта в заказ
+Traceback (most recent call last):
+  File "D:\attempt 2\pro\dz\6\discount\order.py", line 39, in add_product
+    if not isinstance(prod, product.Product):
+                            ^^^^^^^
+NameError: name 'product' is not defined
+2024-01-06 13:29:40,703 - order - ERROR - Ошибка при расчете общей стоимости заказа
+Traceback (most recent call last):
+  File "D:\attempt 2\pro\dz\6\discount\order.py", line 52, in total_price
+    disc = customer.discount.discount() if customer else 0
+           ^^^^^^^^^^^^^^^^^
+AttributeError: 'Customer' object has no attribute 'discount'
+2024-01-06 13:29:40,703 - __main__ - INFO - Total price for the order: None
+2024-01-06 13:31:00,325 - __main__ - INFO - Chosen discount: gold
+2024-01-06 13:31:00,326 - __main__ - INFO - Total price for the order: 360.0
+2024-01-06 13:32:20,761 - __main__ - INFO - Chosen discount: gold
+2024-01-06 13:32:20,761 - __main__ - INFO - Total price for the order: 360.0
