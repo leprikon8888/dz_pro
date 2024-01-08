@@ -80,3 +80,14 @@ AttributeError: 'Customer' object has no attribute 'discount'
 2024-01-06 13:29:40,703 - __main__ - INFO - Total price for the order: None
 2024-01-06 13:31:00,325 - __main__ - INFO - Chosen discount: gold
 2024-01-06 13:31:00,326 - __main__ - INFO - Total price for the order: 360.0
+2024-01-08 16:47:44,066 - __main__ - INFO - Chosen discount: gold
+2024-01-08 16:47:44,068 - __main__ - INFO - Total price for the order: 360.0
+2024-01-08 16:48:34,575 - __main__ - INFO - Chosen discount: gold
+2024-01-08 16:49:12,915 - __main__ - INFO - Chosen discount: gold
+2024-01-08 16:50:53,506 - __main__ - INFO - Chosen discount: gold
+2024-01-08 16:52:35,786 - __main__ - INFO - Chosen discount: gold
+2024-01-08 16:53:21,735 - __main__ - INFO - Chosen discount: gold
+2024-01-08 16:53:43,706 - __main__ - INFO - Chosen discount: gold
+2024-01-08 16:53:43,706 - __main__ - INFO - Total price for the order: 405.0
+2024-01-08 17:06:25,434 - __main__ - INFO - Chosen discount: silver
+2024-01-08 17:06:25,435 - __main__ - INFO - Total price for the order: 427.5

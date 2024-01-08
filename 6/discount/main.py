@@ -12,7 +12,8 @@ file_handler = logging.FileHandler('log.txt')
 terminal_handler.setLevel(logging.DEBUG)
 file_handler.setLevel(logging.INFO)
 
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+formatter = logging.Formatter(
+    '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 terminal_handler.setFormatter(formatter)
 file_handler.setFormatter(formatter)
 
@@ -48,9 +49,12 @@ if __name__ == '__main__':
 
     product1 = product.Product('banana', 100)
     product2 = product.Product('apple', 200)
+    product3 = product.Product('kiwi', 50)
     customer_order = order_module.Order()
     customer_order.add_product(product1, 2)
     customer_order.add_product(product2, 1)
+    customer_order += product3
+
 
     total_price = customer_order.total_price(customer)
 

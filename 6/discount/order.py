@@ -32,6 +32,7 @@ class Customer:
         except Exception as e:
             logger.exception("Ошибка при создании объекта Customer")
 
+
 class Order:
     def __init__(self):
         self.products = []
@@ -48,11 +49,24 @@ class Order:
         except Exception as e:
             logger.exception("Ошибка при добавлении продукта в заказ")
 
+    def __iadd__(self, other):
+        if isinstance(other, tuple) and len(other) == 2:
+            prod, quantity = other
+            if isinstance(product, product.Product) and isinstance(quantity, int):
+                self.add_product(prod, quantity)
+                return self
+        elif isinstance(other, product.Product):
+            self.add_product(other, 1)
+            return self
+        raise ValueError("Неверный формат для добавления продукта в заказ")
+
     def total_price(self, customer: Customer = None):
         try:
             if customer and not isinstance(customer, Customer):
-                raise TypeError("customer должен быть объектом класса Customer")
-            disc = customer.discount.discount() if customer and hasattr(customer, 'discount') else 0
+                raise TypeError(
+                    "customer должен быть объектом класса Customer")
+            disc = customer.discount.discount() if customer and hasattr(
+                customer, 'discount') else 0
             total = 0
             for prod, quan in zip(self.products, self.quantities):
                 total += prod.price * quan
