@@ -5,26 +5,27 @@ import math
 
 class Fraction:
     def __init__(self, numerator, denominator):
-        self.numerator = numerator
-        self.denominator = denominator
-        self.reduce()
+            if not isinstance(numerator, int):
+                raise TypeError('Numerator must be an integer')
+            if not isinstance(denominator, int):
+                raise TypeError('Denominator must be an integer')
+            if denominator ==0:
+                raise ValueError('Denominator cannot be zero')
+            self.numerator = numerator
+            self.denominator = denominator
 
-    def reduce(self):
-        # Находим наибольший общий делитель
-        gcd = math.gcd(self.numerator, self.denominator)
-        self.numerator = self.numerator // gcd  # Сокращаем числитель
-        self.denominator = self.denominator // gcd  # Сокращаем знаменатель
 
-    def __str__(self):
-        whole = self.numerator // self.denominator
-        remainder = self.numerator % self.denominator
+    def __add__(self, other):
+        if isinstance(other, Fraction):
+            new_denominator = self.denominator * other.denominator
+            new_numerator = (self.numerator * other.denominator) + (other.numerator * self.denominator)
+            return Fraction(new_numerator, new_denominator)
 
-        if remainder == 0:
-            return str(whole)
-        elif whole == 0:
-            return f"{self.numerator}/{self.denominator}"
-        else:
-            return f"{whole}  {remainder}/{self.denominator}"
+        if isinstance(other, int):
+            numerator = self.numerator + other * self.denominator
+            return  Fraction(numerator, self.denominator)
+
+        raise  TypeError ('Data type error')
 
     def __eq__(self, other):
         return self.numerator * other.denominator == other.numerator * self.denominator
@@ -32,11 +33,6 @@ class Fraction:
     def __lt__(self, other):
         return self.numerator * other.denominator < other.numerator * self.denominator
 
-    def __add__(self, other):
-        new_denominator = self.denominator * other.denominator
-        new_numerator = (self.numerator * other.denominator) + \
-            (other.numerator * self.denominator)
-        return Fraction(new_numerator, new_denominator)
 
     def __sub__(self, other):
         new_denominator = self.denominator * other.denominator
@@ -55,14 +51,33 @@ class Fraction:
         return Fraction(new_numerator, new_denominator)
 
 
-a = Fraction(25, 10)
-b = Fraction(13, 10)
-c = Fraction(325, 100)
-d = Fraction(325, 100)
+    def __str__(self):
+        tmp = math.gcd(self.numerator, self.denominator)
+        self.numerator //= tmp
+        self.denominator //= tmp
+        sign = '-' if self.numerator * self.denominator < 0 else ''
+        numerator = abs(self.numerator)
+        denominator = abs(self.denominator)
+        if denominator ==1:
+            return f'{sign}{numerator}'
+        if numerator == 0:
+            return '0'
+        if numerator == denominator:
+            return f'{sign}1'
+        if numerator > denominator:
+            integer = numerator // denominator
+            numerator %= denominator
+            return f'{sign}{integer} {numerator}/{denominator}'
 
-print(c==d)
-print(c>d)
-print(a * b)
+        return f'{sign}{numerator}/{denominator}'
+
+
+a = Fraction(-25, 10)
+b = Fraction(13, 11)
+# c = Fraction(325, 100)
+# d = Fraction(325, 100)
+c = a *b
+
+print(a)
+print(b)
 print(c)
-
-print((a*b) == c)
