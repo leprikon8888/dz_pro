@@ -38,7 +38,7 @@ class Category:
         return len(self.dishes)
 
     def __str__(self):
-        return f'Категория {self.title} содержит следующие блюда:\n{"\n".join(map(str, self.dishes))}\n{50 * "*"}\n'
+        return f'Категория {self.title} содержит следующие блюда:\n{"".join(map(str, self.dishes))}\n{50 * "*"}\n'
 
 
 class Menu:
@@ -68,7 +68,7 @@ class Menu:
         return len(self.menu)
 
     def __str__(self):
-        return f'{self.title} содержит следующие категории блюд:\n\n{"\n".join(map(str, self.menu))}'
+        return f'{self.title} содержит следующие категории блюд:\n\n{"".join(map(str, self.menu))}'
 
 
 coffee = Dish('coffee', 40, 'hot drink')
